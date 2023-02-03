@@ -33,7 +33,7 @@ def guess_numbers(a, b):
 print('Загадайте 2 числа в диапозоне от 0 до 1000')
 sum_num = input_numbers('Введите сумму этих чисел - ')
 mult_num = input_numbers('Введите произведение этих чисел - ')
-if sum_num >= 0 <= 2000 and mult_num >= 0:
+if 0 <= sum_num <= 2000 and mult_num >= 0:
     x = int(guess_numbers(sum_num, mult_num)[0])
     y = int(guess_numbers(sum_num, mult_num)[1])
     print(f'Загаданные числа - {x}, {y}')
