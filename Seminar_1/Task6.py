@@ -7,21 +7,25 @@
 # Пример:
 # 385916 -> yes
 # 123456 -> no
-def input_numbers(InputText):
+def input_numbers(input_text):
     is_OK = False
     while not is_OK:
         try:
-            number = int(input(f'{InputText}'))
+            number = int(input(input_text))
             is_OK = True
         except ValueError:
             print('Ошибка! Введите число')
     return number
+
+
 def sum_digit(number):
     sum = 0
     while number > 0:
         sum += number % 10
         number //= 10
     return sum
+
+
 def check_lucky_ticket(number):
     num1 = number % 1000
     num2 = number // 1000

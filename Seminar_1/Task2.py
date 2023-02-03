@@ -5,12 +5,12 @@
 # 100 -> 1 (1 + 0 + 0)
 
 def sum_digit(number):
-    sum = 0
+    sum_digit = 0
     while number > 0:
-        sum += number % 10
+        sum_digit += number % 10
         number //= 10
-    return sum
+    return sum_digit
 
 num = int(input('Введите число - '))
-sum = sum_digit(num)
+sum_digits = sum_digit(num)
 print(f'Сумма цифр числа {num} = {sum}')
