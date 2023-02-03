@@ -20,7 +20,7 @@ def input_numbers(input_text):
 def min_flip_coins(number):
     count_tails = 0
     count_coat = 0
-    for i in range(number + 1):
+    for i in range(number):
         side_coin = randint(0 ,1)
         print(side_coin, end= ' ')
         if side_coin == 0:
