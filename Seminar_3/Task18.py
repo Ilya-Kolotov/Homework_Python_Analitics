@@ -8,7 +8,7 @@
 # 6
 # -> 5
 
-# ver 1
+# ver 1 по условию задачи
 
 # def input_numbers(input_text):
 #     while True:
