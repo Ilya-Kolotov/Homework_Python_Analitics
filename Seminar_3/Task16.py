@@ -20,10 +20,8 @@ def input_numbers(input_text):
 
 n = input_numbers('Введите количество элементов в массиве - ')
 x = input_numbers(f'Введите число, которое надо проверить - ')
-list_1 = []
-for i in range(n):
-    list_1.append(randint(1, n))
+list_1 = [randint(1, n) for i in range(n)]
 print(n)
-print(list_1)
+print(*list_1)
 print(x)
 print(f'Число {x} в массиве встречается {list_1.count(x)} раз')
