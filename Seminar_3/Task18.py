@@ -72,4 +72,4 @@
 # print(n)
 # print(*list_1)
 # print(x)
-# print(f'Ближайший(-е) элемент(-ы) по величине близкий к {x} =', ','.join(map(str, check_num)))
+# print(f'Ближайший(-е) элемент(-ы) по величине близкий(-е) к {x} =', ','.join(map(str, check_num)))
