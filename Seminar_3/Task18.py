@@ -43,33 +43,41 @@
 
 # ver 2 with random
 
-# from  random import randint
-#
-# def input_numbers(input_text):
-#     while True:
-#         try:
-#             number = int(input(input_text))
-#             return number
-#         except ValueError:
-#             print('Ошибка! Введите число')
-#
-#
-# def check_elem(list_check):
-#     diff = []
-#     check_num = []
-#     for j in range(len(list_check)):
-#             diff.append(abs(x - list_check[j]))
-#     for i in range(len(diff)):
-#         if diff[i] == min(diff):
-#             check_num.append(list_check[i])
-#     return check_num
-#
-#
-# n = input_numbers('Введите количество элементов в массиве - ')
-# x = input_numbers(f'Введите число, которое надо проверить - ')
-# list_1 = [randint(1, n) for i in range(n)]
-# check_num = set(check_elem(list_1))
-# print(n)
-# print(*list_1)
-# print(x)
-# print(f'Ближайший(-е) элемент(-ы) по величине близкий(-е) к {x} =', ','.join(map(str, check_num)))
+from random import randint
+
+def input_numbers(input_text):
+    while True:
+        try:
+            number = int(input(input_text))
+            return number
+        except ValueError:
+            print('Ошибка! Введите число')
+
+
+def check_elem(list_check, x):
+    diff = []
+    check_num = []
+    for j in range(len(list_check)):
+        if x > max(list_check):
+            check_num.append(max(list_check))
+            return check_num
+        elif list_check[j] == x:
+            check_num.append(list_check[j])
+            return check_num
+        else:
+            diff.append(abs(x - list_check[j]))
+    for i in range(len(diff)):
+        if diff[i] == min(diff) and list_check[i] not in check_num:
+            check_num.append(list_check[i])
+            if len(check_num) > 2:
+                return check_num
+    return check_num
+
+n = input_numbers('Введите количество элементов в массиве - ')
+x = input_numbers(f'Введите число, которое надо проверить - ')
+list_1 = [randint(1, n) for i in range(n)]
+check_num = sorted(check_elem(list_1, x))
+print(n)
+print(*list_1)
+print(x)
+print(f'Ближайший(-е) элемент(-ы) по величине близкий(-е) к {x} =', ','.join(map(str, check_num)))
